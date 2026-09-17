@@ -1,17 +1,39 @@
-# blog_app
+# InkBlog - ATS MAPIL
 
-A new Flutter project.
+Platform blog mobile untuk artikel Teknologi, Desain, dan Pemrograman.
+Tugas Assessment Sumatif Tengah Semester (ATS) MAPIL XI RPL - SMK Taruna Bhakti.
 
-## Getting Started
+Stack: Flutter (frontend) + Express.js `/api/v1` (backend) + PostgreSQL `db_blog_app`.
 
-This project is a starting point for a Flutter application.
+## Struktur repo
 
-A few resources to get you started if this is your first Flutter project:
+- `lib/` - Flutter: `main.dart` (Beranda + Detail), `api.dart` (REST `getPosts/getCategories/createPost/updatePost/deletePost/login/register`), `jelajah.dart`, `artikel_saya.dart`, `artikel_baru.dart`, `edit_artikel.dart`, `profile.dart`, `shared.dart`
+- `backend/` - Express: `src/index.ts` (`/api/v1/auth, /posts, /users, /categories`), Drizzle + `pg`, Cloudinary upload
+- `backend/.env.example` - contoh env (DB + JWT + Cloudinary). Jangan push `.env` asli.
+- `assets/image/` - cover artikel + foto profil
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Cara jalan
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Frontend:
+```powershell
+flutter pub get
+flutter run
+```
+
+Backend:
+```powershell
+cd backend
+npm install
+npm run dev
+```
+
+API: `http://localhost:3000/api/v1`
+
+## Branching
+
+- `main` - stabil siap dinilai
+- `develop` - integrasi fitur
+- `feature/frontend-ui` - UI Beranda, Jelajah, Profil
+- `feature/backend-api` - integrasi Express
+- `feature/crud-posts` - tambah, edit, hapus artikel
+- `feature/database` - tabel `users, categories, posts, comments`
